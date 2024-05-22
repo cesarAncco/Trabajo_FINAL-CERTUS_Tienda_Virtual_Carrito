@@ -33,22 +33,37 @@
       </nav>
     </header>
   
-    <div class="container sm-4">
-      <h1 class="text-center">Catalogo de Productos de Laptops</h1>
-      <p class="text-justify">
-        Esta página es creada para poder presentar el catálogo de productos de
-        <span class="text-danger">Laptops de diferentes marcas</span>
-        para que los usuarios puedan ver diferentes opciones los cuales la
-        tienda ofrece al público.
+    <div class="container my-4">
+      <h1 class="text-center mb-4">Catálogo de Productos de Laptops</h1>
+      <p class="text-justify mb-4">
+          Esta página es creada para poder presentar el catálogo de productos de
+          <span class="text-danger">Laptops de diferentes marcas</span>
+          para que los usuarios puedan ver diferentes opciones los cuales la
+          tienda ofrece al público.
       </p>
     </div>
 
-    <div class="container mt-4">
-
-      <div id="product-container" class="row">
-
+    <div class="m-4">
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="product-container" class="row">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div id="product-carrito">
+            <p>Carrito de Compras</p>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div id="price">
+            <p>Total</p>
+            <p>Monto : S/ 0</p>
+            <a class="btn btn-primary">Pagar</a>
+          </div>
+        </div>
       </div>
     </div>
+
 
     <footer class="bg-dark text-white pt-4">
       <div class="container">
@@ -82,30 +97,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      function createProductCard(product) {
-        return `
-              <div class="col-md-6 col-lg-4 mb-4 d-flex">
-                  <div class="card flex-fill" style="width: 18rem">
-                      <img src="${product.img}" class="card-img-top" alt="${product.title}" />
-                      <div class="card-body">
-                          <h5 class="card-title">${product.title}</h5>
-                          <p class="card-text">${product.store}</p>
-                          <p class="card-text">${product.price}</p>
-                          <a href="/detail.html?id=${product.id}" class="btn btn-primary">Ver Detalle</a>
-                      </div>
-                  </div>
-              </div>
-          `;
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const container = document.getElementById("product-container");
-        products.forEach((product) => {
-          container.innerHTML += createProductCard(product);
-        });
-      });
-    </script>
   </body>
 </html>

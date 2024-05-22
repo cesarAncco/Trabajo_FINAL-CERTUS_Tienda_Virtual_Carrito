@@ -19,3 +19,29 @@ p {
 .tamano {
   width: 18rem
 }
+
+#product-carrito {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+#product-carrito p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.cart-item {
+  margin-bottom: 10px;
+}
+
+#price {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+#price p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}

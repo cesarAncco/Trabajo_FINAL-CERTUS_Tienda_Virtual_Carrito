@@ -1,3 +1,4 @@
+// Listado de todos los productos para el catalogo
 const products = [
   {
     id: 1,
@@ -59,6 +60,7 @@ const products = [
   },
 ];
 
+// Función para la creacion de cartas dinamicas para los productos
 function createProductCard(product) {
 
   return `
@@ -77,6 +79,7 @@ function createProductCard(product) {
   `;
 }
 
+// Aqui se crean las diversas cartas para los producto
 document.addEventListener("DOMContentLoaded", function () {
   let container = document.getElementById("product-container");
   products.forEach((product) => {
@@ -84,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Función para las cartas para el carrito
 function addCar(id, img, title, price) {
 
   // Crea un nuevo div para el carrito
@@ -91,20 +95,24 @@ function addCar(id, img, title, price) {
   let newDiv = document.createElement("div");
   newDiv.classList.add("cart-item");
 
+  // Asignamos un id al nuevo div
   let divId = 'div-' + id;
   
-
+  // variable para guardar la cantidad o inicializarlo
   let amount = 0;
 
+  // Verificamos la existencia del div para que no se repita
   if (document.getElementById(divId)) {
+    // Si existe el div con el producto en el carrito solo editamos la cantidad
     let divContainer = document.getElementById(divId);
     let pContainer = divContainer.getElementsByTagName('p')[1]
     let amountAct = parseInt(pContainer.textContent.split(':')[1].trim())
+    // Se modifica y se agrega un mas al contador
     let newAmount = amountAct + 1;
-
+    // Se actualiza la vista
     pContainer.textContent = `Cantidad : ${newAmount}`
-
   } else {
+    // Si no existe se asigna el id y se crea la carta
     newDiv.id = divId;
     newDiv.innerHTML = `
       <div class="card">
@@ -119,12 +127,14 @@ function addCar(id, img, title, price) {
     productCar.appendChild(newDiv);
   }
 
+  // Actualiza el monto a pagar al final con todos los precios del carrito
   let divPrice = document.getElementById("price");
   let pContainerPrice = divPrice.getElementsByTagName('p')[1];
   let priceAct = parseInt(pContainerPrice.textContent.split('/')[1].trim());
   let productPrice = parseFloat(price)
+  // Se suma el precio del producto
   let newPrice = priceAct + productPrice;
-
+  // Se actualiza el monto para la visualizacion
   pContainerPrice.textContent = `Monto : S/ ${newPrice}`;
 
 

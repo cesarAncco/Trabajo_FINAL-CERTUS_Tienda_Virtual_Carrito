@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo de Productos con Bootstrap</title>
+    <!-- Enlace a jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/products.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
-
     <!-- Un header como encabezado de la pagina web -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -18,47 +18,55 @@
           <i class="bi bi-laptop"></i>
           Mundo Laptop
         </a>
-        <button class="navbar-toggler" type="button">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link text-white" href="/catalogue.html">Catalogo</a>
+              <a class="nav-link text-white" href="/catalogue.html">Catálogo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-primary text-white ml-3" href="/index.html">Cerrar Sesion</a>
+              <a class="nav-link btn btn-primary text-white ml-3" href="/index.html">Cerrar Sesión</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-  
+
     <div class="container my-4">
       <h1 class="text-center mb-4">Catálogo de Productos de Laptops</h1>
       <p class="text-justify mb-4">
-          Esta página es creada para poder presentar el catálogo de productos de
-          <span class="text-danger">Laptops de diferentes marcas</span>
-          para que los usuarios puedan ver diferentes opciones los cuales la
-          tienda ofrece al público.
+        Esta página es creada para poder presentar el catálogo de productos de
+        <span class="text-danger">Laptops de diferentes marcas</span>
+        para que los usuarios puedan ver diferentes opciones los cuales la
+        tienda ofrece al público.
       </p>
     </div>
 
     <!-- Un div donde contiene 3 divs internos para los productos, el carrito y el monto a pagar -->
     <div class="m-4">
       <div class="row">
-        <div class="col-sm-8">
-          <div id="product-container" class="row">
-          </div>
+        <div class="col-12 col-md-8 mb-4">
+          <div id="product-container" class="row"></div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-12 col-md-2 mb-4">
           <div id="product-carrito">
             <p>Carrito de Compras</p>
           </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-12 col-md-2 mb-4">
           <div id="price">
             <p>Total</p>
+            <p>Cantidad: 0</p>
             <p>Monto : S/ 0</p>
             <a class="btn btn-primary">Pagar</a>
           </div>
@@ -73,7 +81,9 @@
           <!-- About -->
           <div class="col-md-4">
             <h5>Somos</h5>
-            <p>Somos una tienda donde ofrecemos Laptops de diferentes marcas.</p>
+            <p>
+              Somos una tienda donde ofrecemos Laptops de diferentes marcas.
+            </p>
           </div>
           <!-- Navegación -->
           <div class="col-md-4">
@@ -94,10 +104,18 @@
         </div>
         <div class="row mt-4">
           <div class="col-md-12 text-center">
-            <p class="mb-0">&copy; 2024 Mundo Laptop. Todos los Derechos Reservados.</p>
+            <p class="mb-0">
+              &copy; 2024 Mundo Laptop. Todos los Derechos Reservados.
+            </p>
           </div>
         </div>
       </div>
     </footer>
+
+    <script src="/js/products.js"></script>
+    <!-- Enlace a Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Enlace a JavaScript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
